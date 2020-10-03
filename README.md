@@ -11,21 +11,18 @@
 ## Building your image - Build with PATH
 
 ```sh
-Go to the directory that has your Dockerfile and run the following command to build the Docker image. 
-The -t flag lets you tag your image so it's easier to find later using the docker images command:
-
-docker build -t <tag name> .
+# Go to the directory that has your Dockerfile and run the following command to build the Docker image. 
+# The -t flag lets you tag your image so it's easier to find later using the docker images command:
+$ docker build -t <tag name> .
 
 ```
 ## Check the image
 
 ```sh
-The docker images command lists all the Docker images you have in your computer's local Docker image registry. Here is an example of the docker images command:
+# The docker images command lists all the Docker images you have in your computer's local Docker image registry. 
+$ docker images
 
-docker images
-
-The output from running the above command will look similar to this:
-
+#The output from running the above command will look similar to this:
 REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
 docker-node-app     latest              923659800e1e        28 seconds ago      921MB
 node                12                  28faf336034d        2 weeks ago         918MB
@@ -35,11 +32,10 @@ node                12                  28faf336034d        2 weeks ago         
 ## Run the image
 
 ```sh
-Running your image with -d runs the container in detached mode, leaving the container running in the background. The -p flag redirects a public port to a private port inside the container. Run the image you previously built:
+# Running your image with -d runs the container in detached mode, leaving the container running in the background. 
+# The -p flag redirects a public port to a private port inside the container
 
-docker run -p 49160:1000 -d <your image name or image id>
-
-docker run -p 49160:1000 -d docker-node-ap
+$ docker run -p 49160:1000 -d <image name or image id>
 
 ```
 ## Check containers
@@ -52,7 +48,7 @@ $ docker ps
 $ docker logs <container id>
 
 # Example
-Running on http://localhost:1000
+Running on http://localhost:8080
 
 If you need to go inside the container you can use the exec command:
 
